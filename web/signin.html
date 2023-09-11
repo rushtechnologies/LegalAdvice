@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--
+    @author: Carlos Huerta García
+    Material Design Lite
+    Copyright 2015 Google Inc. All rights reserved.
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+    https://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<html lang="es">
+    <head>
+        <title>Nuevo Usuario</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <meta name="mobile-web-app-capable" content="yes">
+        <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+        <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+        <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+        <meta name="msapplication-TileColor" content="#3372DF">
+        <link rel="shortcut icon" href="images/favicon.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-pink.min.css" />
+        <link rel="stylesheet" href="css/styles_login.css">
+    </head>
+    <body>
+        <div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
+            <header class="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
+                <div class="mdl-layout__header-row">
+                    <span class="mdl-layout-title">Nuevo Usuario</span>
+                    <div class="mdl-layout-spacer"></div>
+                </div>
+            </header>
+            <div class="demo-ribbon"></div>
+            <main class="demo-main mdl-layout__content">
+                <div class="demo-container mdl-grid">
+                    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+                    <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+                        <div class="demo-crumbs mdl-color-text--grey-500">
+                            Legal Advice
+                        </div>
+                        <table border="0" width="100%">
+                            <tr><td colspan="2" width="100%"><center><p><img src="images/logo.png" width="25%" alt="Logo"></p></center></td></tr>
+                            <tr>
+                                <td width="70%">
+                                    <h3>Nuevo Usuario</h3>
+                                    <p class="mdl-color-text--primary-dark" id="msj"></p>
+                                    <form action="Controller" method="post">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="text" name="user" id="user" autocomplete="off" onkeypress="alpha()" pattern="[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]{1,50}$"/>
+                                            <label class="mdl-textfield__label" for="user">Nombre (usuario)</label>
+                                        </div>
+                                        <div class="mdl-tooltip mdl-tooltip--large" for="user">Ingrese su nombre de usuario de máximo 50 caracteres.</div>
+                                        <br/>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="password" name="pass" id="pass" autocomplete="off" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"/>
+                                            <label class="mdl-textfield__label" for="pass">Contraseña (mínimo 8 caracteres)</label>
+                                        </div>
+                                        <div class="mdl-tooltip mdl-tooltip--large" for="pass">Ingrese su contraseña de mínimo 8 caracteres, incluyendo caracteres espepciales y mayúsculas, máximo 50 caracteres.</div>
+                                        <br/>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="password" name="pass2" id="pass2" autocomplete="off" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"/>
+                                            <label class="mdl-textfield__label" for="pass2">Repetir contraseña</label>
+                                        </div>
+                                        <div class="mdl-tooltip mdl-tooltip--large" for="pass2">Repita la contraseña que ingresó previamente.</div>
+                                        <br/>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="email" name="mail" id="mail" autocomplete="off" onkeypress="email()" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                                            <label class="mdl-textfield__label" for="mail">Correo electrónico</label>
+                                        </div>
+                                        <div class="mdl-tooltip mdl-tooltip--large" for="mail">Ingrese su correo electrónico (xx@xx.xx) para contactarle en caso de ser necesario.</div>
+                                        <br/>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
+                                            <select id="q" name="q" class="mdl-textfield__input" autocomplete="off">
+                                                <option selected></option>
+                                                <option value="friend">Nombre de tu mejor amigo de la infancia</option>
+                                                <option value="pet">Nombre de tu primer mascota</option>
+                                                <option value="col">Nombre de tu universidad</option>
+                                            </select>
+                                            <label for="q" class="mdl-textfield__label">Pregunta de seguridad</label>
+                                        </div>
+                                        <div class="mdl-tooltip mdl-tooltip--large" for="q">Seleccione una pregunta de seguridad para proteger su cuenta.</div>
+                                        <br/>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="text" name="ans" id="ans" autocomplete="off" onkeypress="alpha()" pattern="[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]"/>
+                                            <label class="mdl-textfield__label" for="ans">Respuesta</label>
+                                        </div>
+                                        <div class="mdl-tooltip mdl-tooltip--large" for="ans">Ingrese la respuesta a la pregunta de seguridad que ha seleccionado.</div>
+                                        <br/>
+                                        <br/>
+                                        <button onclick="return Fsignin();" type="submit" name="submitla" value="Registrar Usuario" id="signin" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Registrar Usuario</button>
+                                        <div class="mdl-tooltip mdl-tooltip--large" for="signin">Registrarse y acceder a Legal Advice</div>
+                                    </form>
+                                </td>
+                                <td class="mdl-layout--large-screen-only" width="30%"><center><p><img src="images/la2.fw.png" width="90%" alt="Logo"></p></center></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div style="height: 42vh; width: 100%"></div>
+                <footer class="demo-footer mdl-mini-footer">
+                    <div class="mdl-mini-footer--left-section">
+                        <ul class="mdl-mini-footer--link-list">
+                            <li><a href="index.html">Página de inicio</a></li>
+                            <li><a href="login.html">Acceder</a></li>
+                            <li><a href="l_signin.html">Nuevo abogado</a></li>
+                            <li><a href="about.html">Acerca de</a></li>
+                        </ul>
+                    </div>
+                    <div class="mdl-mini-footer--right-section">
+                        Rush Techologies
+                    </div>
+                </footer>
+            </main>
+        </div>
+        <script src="js/legal_advice.js"></script>
+        <script src="js/signincp.js"></script>
+        <script src="js/signin.js"></script>
+        <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    </body>
+</html>

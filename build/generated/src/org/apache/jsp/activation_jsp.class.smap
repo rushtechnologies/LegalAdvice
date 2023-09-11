@@ -1,0 +1,14 @@
+SMAP
+activation_jsp.java
+JSP
+*S JSP
+*F
++ 0 activation.jsp
+activation.jsp
+*L
+5,28:52
+33,31:81
+63,23:112
+86:135,3
+87,44:138
+*E
